@@ -18,12 +18,6 @@ fi
 
 sed -i.bak -e "s/@secret_key@/$SECRET_KEY/" $CONFIG_FILE
 
-if [ -z $SHARED_DIR ]; then
-    echo Please provide a directory to share with the SHARED_DIR enviroment variable.
-    exit 1
-fi
-
-sed -i.bak -e "s/@shared_dir@/$SHARED_DIR/" $CONFIG_FILE
 
 
 exec btsync --config /btsync/btsync.conf --nodaemon
