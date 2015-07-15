@@ -18,6 +18,6 @@ ENTRYPOINT ["btsync"]
 
 ADD files/btsync.conf /btsync/btsync.conf
 
-USER btsync
+#USER btsync
 
 CMD ["/run_btsync.sh"]
