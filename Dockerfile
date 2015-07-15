@@ -15,4 +15,9 @@ EXPOSE 8888
 EXPOSE 55555
 
 ENTRYPOINT ["btsync"]
-CMD ["--config", "/btsync/btsync.conf", "--nodaemon"]
+
+ADD files/btsync.conf /btsync/btsync.conf
+
+USER btsync
+
+CMD ["/run_btsync.sh"]
