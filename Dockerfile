@@ -14,10 +14,15 @@ EXPOSE 8888
 # Listening port
 EXPOSE 55555
 
-ENTRYPOINT ["btsync"]
+#ENTRYPOINT ["btsync"]
+
+RUN mkdir /shared
+
+VOLUME ["/shared"]
 
 ADD files/btsync.conf /btsync/btsync.conf
+ADD files/run_btsync.sh /run_btsync.sh
 
-USER btsync
+#USER btsync
 
 CMD ["/run_btsync.sh"]
